@@ -1,0 +1,59 @@
+import 'package:flutter/material.dart';
+
+class CustomButton extends StatelessWidget {
+  final void Function()? onTap;
+  final String text;
+  final Color color;
+  final IconData? icon;
+
+  const CustomButton({
+    super.key,
+    this.onTap,
+    required this.text,
+    this.color = const Color.fromRGBO(19, 159, 37, 1),
+    this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 52,
+        width: 295,
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.green,
+            width: 2,
+          ),
+          color: color,
+          borderRadius: BorderRadius.circular(26),
+        ),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (icon != null) ...[
+                Icon(
+                  icon,
+                  color: Colors.black,
+                  size: 20,
+                ),
+                const SizedBox(width: 8),
+              ],
+              Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
