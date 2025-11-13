@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:delivery_app_two/Custom/custom_indicator.dart';
 import 'package:delivery_app_two/Custom/route_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,8 +15,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  //===============Image Picker Logic=================//
   int _currentIndex = 0;
   final PageController _controller = PageController();
+  File? profileImage;
+
+  Future<void> pickImage() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+    if (pickedFile != null){
+      setState(() {
+        profileImage = File(pickedFile.path);
+      });
+    }
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +45,16 @@ class _HomeScreenState extends State<HomeScreen> {
               //==============Bar Section==================//
               Row(
                 children: [
-                  Container(
-                    height: 48,
-                    width: 48,
-                    decoration: const BoxDecoration(shape: BoxShape.circle),
-                    child: ClipOval(
-                      child: Image.asset(
-                        "assets/images/img_4.png",
-                        fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: pickImage,
+                    child: Container(
+                      height: 48,
+                      width: 48,
+                      decoration: const BoxDecoration(shape: BoxShape.circle),
+                      child: ClipOval(
+                        child: profileImage != null
+                            ? Image.file(profileImage!, fit: BoxFit.cover,)
+                            : Image.asset("assets/images/img_4.png", fit: BoxFit.cover,)
                       ),
                     ),
                   ),
