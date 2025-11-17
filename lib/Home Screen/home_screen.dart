@@ -288,7 +288,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
-
-///=-=-=-=-=-=-=-=-=-=-=-=-=-=this is my home page=-=-=-=-=-=-=-=-=-=-=-=-=-=-///
