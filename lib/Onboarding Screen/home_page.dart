@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
             text: "Sign Up",
             color: Colors.green,
             onTap: () {
-              SharedPrefsHelper.setBool(
+              SharePrefsHelper.setBool(
                 SharedPreferenceValue.isOnboarding,
                 true,
               );
@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
             text: "Sign In",
             color: Colors.white,
             onTap: () {
-              SharedPrefsHelper.setBool(
+              SharePrefsHelper.setBool(
                 SharedPreferenceValue.isOnboarding,
                 true,
               );

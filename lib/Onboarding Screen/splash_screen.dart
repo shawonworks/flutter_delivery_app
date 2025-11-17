@@ -14,7 +14,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   navigate() async {
-    bool? isOnboarding = await SharedPrefsHelper.getBool(SharedPreferenceValue.isOnboarding);
+    bool? isOnboarding = await SharePrefsHelper.getBool(SharedPreferenceValue.isOnboarding);
     Future.delayed(const Duration(seconds: 3), (){
       if(isOnboarding == true){
         Get.toNamed(AppRoute.homeScreen);

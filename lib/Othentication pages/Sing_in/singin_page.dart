@@ -1,11 +1,11 @@
-import 'package:delivery_app_two/Controller/singin_controller.dart';
+import 'package:delivery_app_two/Othentication%20pages/Sing_in/singin_controller.dart';
 import 'package:delivery_app_two/Service/api_url.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-import '../Onboarding Screen/custom_button.dart';
-import '../Custom/route_page.dart';
+import '../../Onboarding Screen/custom_button.dart';
+import '../../Custom/route_page.dart';
 
 class SinginPage extends StatefulWidget {
   const SinginPage({super.key});

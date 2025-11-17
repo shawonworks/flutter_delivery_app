@@ -25,7 +25,7 @@ class ApiClient extends GetxService {
   ///<======================== This is for get methode =======================>
   static Future<Response> getData(String uri,
       {Map<String, dynamic>? query, Map<String, String>? headers}) async {
-    bearerToken = await SharedPrefsHelper.getString(AppConstants.bearerToken);
+    bearerToken = await SharePrefsHelper.getString(AppConstants.bearerToken);
 
     var mainHeaders = {
       //'Content-Type': 'application/x-www-form-urlencoded',
@@ -53,7 +53,7 @@ class ApiClient extends GetxService {
   ///<====================== This is for post methode ========================>
   static Future<Response> postData(String uri, dynamic body,
       {Map<String, String>? headers})async{
-    bearerToken = await SharedPrefsHelper.getString(AppConstants.bearerToken);
+    bearerToken = await SharePrefsHelper.getString(AppConstants.bearerToken);
 
     debugPrint("This one is the  base url=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-${ApiConstant.baseUrl}");
 
@@ -85,7 +85,7 @@ class ApiClient extends GetxService {
   ///<====================== This is for patch methode ========================>
   static Future<Response> patchData(String uri, dynamic body,
       {Map<String, String>? headers}) async {
-    bearerToken = await SharedPrefsHelper.getString(AppConstants.bearerToken);
+    bearerToken = await SharePrefsHelper.getString(AppConstants.bearerToken);
 
     var mainHeaders = {
       // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -119,7 +119,7 @@ class ApiClient extends GetxService {
           {List<MultipartBody>? multipartBody,
         Map<String, String>? headers}) async {
     try {
-      bearerToken = await SharedPrefsHelper.getString(AppConstants.bearerToken);
+      bearerToken = await SharePrefsHelper.getString(AppConstants.bearerToken);
 
       var mainHeaders = {
         'Accept': 'multipart/form-data',
@@ -187,7 +187,7 @@ class ApiClient extends GetxService {
       {List<MultipartBody>? multipartBody,
         Map<String, String>? headers}) async {
     try {
-      bearerToken = await SharedPrefsHelper.getString(AppConstants.bearerToken);
+      bearerToken = await SharePrefsHelper.getString(AppConstants.bearerToken);
 
       var mainHeaders = {
         'Accept': 'multipart/form-data',
@@ -325,7 +325,7 @@ class ApiClient extends GetxService {
   ///<====================== This is for patch methode ========================>
   Future<Response> putData(String uri, dynamic body,
       {Map<String, String>? headers}) async {
-    bearerToken = await SharedPrefsHelper.getString(AppConstants.bearerToken);
+    bearerToken = await SharePrefsHelper.getString(AppConstants.bearerToken);
 
     var mainHeaders = {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -353,7 +353,7 @@ class ApiClient extends GetxService {
         List<MultipartListBody>? multipartListBody,
         Map<String, String>? headers}) async {
     try {
-      bearerToken = await SharedPrefsHelper.getString(AppConstants.bearerToken);
+      bearerToken = await SharePrefsHelper.getString(AppConstants.bearerToken);
 
       var mainHeaders = {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -427,7 +427,7 @@ class ApiClient extends GetxService {
   ///<====================== This is for delete methode ========================>
   static Future<Response> deleteData(String uri,
       {Map<String, String>? headers, dynamic body}) async {
-    bearerToken = await SharedPrefsHelper.getString(AppConstants.bearerToken);
+    bearerToken = await SharePrefsHelper.getString(AppConstants.bearerToken);
 
     var mainHeaders = {
       'Content-Type': 'application/x-www-form-urlencoded',

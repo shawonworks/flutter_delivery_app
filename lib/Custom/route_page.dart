@@ -15,7 +15,7 @@ import 'package:get/get.dart';
 
 import '../Othentication pages/forget_page.dart';
 import '../Othentication pages/reset_password.dart';
-import '../Othentication pages/singin_page.dart';
+import '../Othentication pages/Sing_in/singin_page.dart';
 import '../Othentication pages/verify_otp.dart';
 import '../Onboarding Screen/home_page.dart';
 

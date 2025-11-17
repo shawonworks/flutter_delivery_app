@@ -10,8 +10,8 @@ class SingInController extends GetxController {
 
   singIn(String url) async {
     Map<String, String> body = {
-      "email": singInEmailController.text,
-      "password": singInPAssController.text,
+      "email": "${singInEmailController.text}",
+      "password": "${singInPAssController.text}",
     };
 
     var response = await ApiClient.postData(url, body);
