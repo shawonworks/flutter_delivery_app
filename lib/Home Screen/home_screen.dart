@@ -15,9 +15,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0;
 
   //===============Image Picker Logic=================//
-  int _currentIndex = 0;
+
   final PageController _controller = PageController();
   File? profileImage;
 
@@ -287,3 +288,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
+
+///=-=-=-=-=-=-=-=-=-=-=-=-=-=this is my home page=-=-=-=-=-=-=-=-=-=-=-=-=-=-///
