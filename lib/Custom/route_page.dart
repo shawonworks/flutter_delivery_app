@@ -8,7 +8,7 @@ import 'package:delivery_app_two/Home%20Screen/home_screen.dart';
 import 'package:delivery_app_two/Onboarding%20Screen/splash_screen.dart';
 import 'package:delivery_app_two/Onboarding%20Screen/welcome_page_three.dart';
 import 'package:delivery_app_two/Onboarding%20Screen/welcome_page_two.dart';
-import 'package:delivery_app_two/Othentication%20pages/creat_your_account.dart';
+import 'package:delivery_app_two/Othentication%20pages/CreatAccount/creat_your_account.dart';
 import 'package:delivery_app_two/Othentication%20pages/verify_otp_two.dart';
 
 import 'package:get/get.dart';

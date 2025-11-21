@@ -15,6 +15,19 @@ class SinginPage extends StatefulWidget {
 }
 
 class _SinginPageState extends State<SinginPage> {
+  late final SingInController controller;
+
+  @override
+  @override
+  void initState() {
+    super.initState();
+    controller = Get.put(SingInController());
+  }
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

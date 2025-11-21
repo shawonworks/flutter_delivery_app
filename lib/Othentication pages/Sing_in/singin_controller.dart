@@ -9,8 +9,12 @@ import 'package:get/get.dart';
 class SingInController extends GetxController {
   TextEditingController singInEmailController = TextEditingController();
   TextEditingController singInPAssController = TextEditingController();
+  bool isLoading = false;
 
   singIn(String url) async {
+    isLoading = true;
+    update();
+
     Map<String, String> body = {
       "email": "${singInEmailController.text}",
       "password": "${singInPAssController.text}",
@@ -18,13 +22,26 @@ class SingInController extends GetxController {
 
     var response = await ApiClient.postData(url, body);
     if (response.statusCode == 200 || response.statusCode == 201) {
+      await SharePrefsHelper.setString(
+        AppConstants.bearerToken,
+        response.body["data"]["token"],
+      );
 
-      await SharePrefsHelper.setString(AppConstants.bearerToken, response.body["data"]["token"]);
-
-          Get.snackbar("Success", "Login Successfully");
-          Get.toNamed(AppRoute.homePage);
+      Get.snackbar("Success", "Login Successfully");
+      Get.toNamed(AppRoute.homePage);
+      isLoading = false;
+      update();
     } else {
-      ApiChecker();
+      Get.snackbar("Error", "Give the correct value");
+      isLoading = false;
+      update();
     }
+  }
+
+  @override
+  void onClose() {
+    singInEmailController.dispose();
+    singInPAssController.dispose();
+    super.onClose();
   }
 }
