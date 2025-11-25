@@ -1,3 +1,4 @@
+import 'package:delivery_app_two/Language/translator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,15 +10,9 @@ void main() {
   di.dependencies();
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-
-
-
-
-
-  
 
   // This widget is the root of your application.
   @override
@@ -27,24 +22,30 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      debugShowCheckedModeBanner: false,
+      locale: const Locale("en", "US"),
+      translations: Language(),
       defaultTransition: Transition.fadeIn,
       transitionDuration: Duration(milliseconds: 200),
       initialRoute: AppRoute.splashScreen,
       navigatorKey: Get.key,
       getPages: AppRoute.routes,
-      debugShowCheckedModeBanner: false,
     );
   }
 }
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+
   final String title;
+
   @override
-  State<MyHomePage> createState() => _MyHomePageState();}
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold();
   }
 }
