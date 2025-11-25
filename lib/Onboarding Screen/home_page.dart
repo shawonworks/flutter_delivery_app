@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../Utils/StaticString/staic_string.dart';
+
 import 'custom_button.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,11 +25,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // PageView section
           Expanded(
             child: PageView(
               controller: _controller,
@@ -41,7 +41,6 @@ class _HomePageState extends State<HomePage> {
 
           const SizedBox(height: 20),
 
-          // SmoothPageIndicator (just above buttons)
           SmoothPageIndicator(
             controller: _controller,
             count: 3,
@@ -57,9 +56,8 @@ class _HomePageState extends State<HomePage> {
 
           const SizedBox(height: 25),
 
-          // Custom Buttons
           CustomButton(
-            text: "Sign Up",
+            text: AppString.singUp,
             color: Colors.green,
             onTap: () {
               SharePrefsHelper.setBool(
@@ -73,7 +71,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 15),
 
           CustomButton(
-            text: "Sign In",
+            text: AppString.singIn,
             color: Colors.white,
             onTap: () {
               SharePrefsHelper.setBool(

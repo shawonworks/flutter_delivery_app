@@ -15,7 +15,7 @@ class AppString {
   //=-=-=-=-=-=-=-=-=-=-==This is My Authentication Screen Section=-=-=-=-=-=-=-=-=-=-=-=-=--=-//
 
   //=-=-=-=-Sing In Page-=-=-=-=-=-==//
-  static const String welComeBack = "welCome Back";
+  static const String welComeBack = "Welcome Back";
   static const String welComeBackTitle =
       "Log in to continue shopping and enjoy personalized offers";
   static const String emailOrPhone = "Email or Phone Number";

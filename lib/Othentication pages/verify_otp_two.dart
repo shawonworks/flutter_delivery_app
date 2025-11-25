@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:pinput/pinput.dart';
 
 import '../Custom/custom_button.dart';
 import '../Custom/route_page.dart';
+import '../Utils/StaticString/staic_string.dart';
 
 class VerifyOtpTwo extends StatefulWidget {
   const VerifyOtpTwo({super.key});
@@ -31,21 +31,20 @@ class _VerifyOtpTwoState extends State<VerifyOtpTwo> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Welcome Text
             Center(
               child: Column(
                 children: [
                   Text(
-                    "Verify OTP",
+                    AppString.verifyOtp,
                     style: TextStyle(
                       color: Colors.green,
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Text(
-                    "Enter your OTP which has been sent to your phone and completely verify your account.",
+                    AppString.verifyOtpTitle,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 13,
@@ -56,7 +55,7 @@ class _VerifyOtpTwoState extends State<VerifyOtpTwo> {
               ),
             ),
 
-            const SizedBox(height: 40),
+            SizedBox(height: 40),
             Center(
               child: Pinput(
                 controller: otpController,
@@ -90,10 +89,10 @@ class _VerifyOtpTwoState extends State<VerifyOtpTwo> {
                 separatorBuilder: (index) => SizedBox(width: 16),
               ),
             ),
-            const SizedBox(height: 25),
+            SizedBox(height: 25),
             Center(
               child: Text(
-                "A code has been sent to your phone number",
+                AppString.verifyOtpBottomTitle,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 13,
@@ -101,10 +100,10 @@ class _VerifyOtpTwoState extends State<VerifyOtpTwo> {
                 ),
               ),
             ),
-            const SizedBox(height: 25),
+            SizedBox(height: 25),
             Center(
               child: Text(
-                "Resend in 00:57",
+                AppString.resendCode,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20,
@@ -114,18 +113,16 @@ class _VerifyOtpTwoState extends State<VerifyOtpTwo> {
               ),
             ),
 
-
-            SizedBox(height: 35,),
-            // Confirm Button
+            SizedBox(height: 35),
             CustomButton(
-              text: "Verify",
+              text: AppString.verify,
               onTap: () {
                 FocusScope.of(context).unfocus();
                 Get.toNamed(AppRoute.resetPassword);
               },
             ),
 
-            const SizedBox(height: 30),
+            SizedBox(height: 30),
           ],
         ),
       ),

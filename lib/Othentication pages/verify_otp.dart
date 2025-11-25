@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 import '../Onboarding Screen/custom_button.dart';
 import '../Custom/route_page.dart';
-
+import '../Utils/StaticString/staic_string.dart';
 
 class VerifyOtp extends StatefulWidget {
   const VerifyOtp({super.key});
@@ -14,7 +14,6 @@ class VerifyOtp extends StatefulWidget {
 
 class _VerifyOtpState extends State<VerifyOtp> {
   final TextEditingController otpController = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
@@ -31,21 +30,20 @@ class _VerifyOtpState extends State<VerifyOtp> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Welcome Text
             Center(
               child: Column(
                 children: [
                   Text(
-                    "Verify OTP",
+                    AppString.verifyOtp,
                     style: TextStyle(
                       color: Colors.green,
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Text(
-                    "Enter your OTP which has been sent to your phone and completely verify your account.",
+                    AppString.verifyOtpTitle,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 13,
@@ -56,7 +54,7 @@ class _VerifyOtpState extends State<VerifyOtp> {
               ),
             ),
 
-            const SizedBox(height: 40),
+            SizedBox(height: 40),
             Center(
               child: Pinput(
                 controller: otpController,
@@ -90,10 +88,10 @@ class _VerifyOtpState extends State<VerifyOtp> {
                 separatorBuilder: (index) => SizedBox(width: 16),
               ),
             ),
-            const SizedBox(height: 25),
+            SizedBox(height: 25),
             Center(
               child: Text(
-                "A code has been sent to your phone number",
+                AppString.verifyOtpBottomTitle,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 13,
@@ -101,10 +99,10 @@ class _VerifyOtpState extends State<VerifyOtp> {
                 ),
               ),
             ),
-            const SizedBox(height: 25),
+            SizedBox(height: 25),
             Center(
               child: Text(
-                "Resend in 00:57",
+                AppString.resendCode,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20,
@@ -114,18 +112,16 @@ class _VerifyOtpState extends State<VerifyOtp> {
               ),
             ),
 
-
-            SizedBox(height: 35,),
-            // Confirm Button
+            SizedBox(height: 35),
             CustomButton(
-              text: "Verify",
+              text: AppString.verify,
               onTap: () {
                 FocusScope.of(context).unfocus();
                 Get.toNamed(AppRoute.homeScreen);
               },
             ),
 
-            const SizedBox(height: 30),
+            SizedBox(height: 30),
           ],
         ),
       ),

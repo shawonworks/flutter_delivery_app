@@ -1,8 +1,9 @@
 import 'package:delivery_app_two/Custom/custom_button.dart';
 import 'package:delivery_app_two/Custom/route_page.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+
+import '../Utils/StaticString/staic_string.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key});
@@ -20,16 +21,17 @@ class _DetailsPageState extends State<DetailsPage> {
         backgroundColor: Colors.white,
         shadowColor: Colors.grey,
         centerTitle: true,
-        title: Text("Choose Location",
-        style: TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.bold,
-          color: Colors.black
-        ),
+        title: Text(
+          AppString.chooseLocation,
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 15,top: 30,right: 15,bottom: 15),
+        padding: const EdgeInsets.only(left: 15, top: 30, right: 15, bottom: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -45,7 +47,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      "Pick up location",
+                      AppString.pickUpLocation,
                       style: TextStyle(
                         fontSize: 14,
                       ),
@@ -58,7 +60,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 30,),
+                const SizedBox(height: 30),
                 Text(
                   "Gulashan Housing No.21, Dhaka",
                   style: TextStyle(
@@ -82,7 +84,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      "Destination",
+                      AppString.destination,
                       style: TextStyle(
                         fontSize: 14,
                       ),
@@ -95,7 +97,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(height: 20),
                 Text(
                   "Khurushkul, Cox's Bazar City",
                   style: TextStyle(
@@ -106,20 +108,24 @@ class _DetailsPageState extends State<DetailsPage> {
               ],
             ),
             //======================= Map Section ===========================//
-            const SizedBox(height: 30,),
+            const SizedBox(height: 30),
             Container(
               width: 338,
               height: 289,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: Image.asset("assets/images/img_7.png",fit: BoxFit.cover,),
+              child: Image.asset(
+                "assets/images/img_7.png",
+                fit: BoxFit.cover,
+              ),
             ),
-            const SizedBox(height: 40,),
-            CustomButton(text: "Confirm Location",
-            onTap: (){
-              Get.toNamed(AppRoute.detailsPageTwo);
-             },
+            const SizedBox(height: 40),
+            CustomButton(
+              text: AppString.confirmLocation,
+              onTap: () {
+                Get.toNamed(AppRoute.detailsPageTwo);
+              },
             )
           ],
         ),

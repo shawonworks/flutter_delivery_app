@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import '../../Onboarding Screen/custom_button.dart';
 import '../../Custom/route_page.dart';
+import '../../Utils/StaticString/staic_string.dart';
 
 class CreatYourAccount extends StatefulWidget {
   const CreatYourAccount({super.key});
@@ -21,26 +22,25 @@ class _CreatYourAccountState extends State<CreatYourAccount> {
       resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 120),
+          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 120),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              // Welcome Text
               Center(
                 child: Column(
                   children: [
                     Text(
-                      "Create Your Account",
+                      AppString.createAccount,
                       style: TextStyle(
                         color: Colors.green,
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 15),
+                    SizedBox(height: 15),
                     Text(
-                      "Join us to explore top Canadian-made products, exclusive deals, and great rewards",
+                      AppString.createAccountTextTitle,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 13,
@@ -50,10 +50,9 @@ class _CreatYourAccountState extends State<CreatYourAccount> {
                   ],
                 ),
               ),
-              const SizedBox(height: 15,),
+              SizedBox(height: 15),
               Center(
-                child:
-                Text(
+                child: Text(
                   "Select your role",
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -63,32 +62,25 @@ class _CreatYourAccountState extends State<CreatYourAccount> {
                 ),
               ),
 
-              //---------Custom button two----------//
-              const SizedBox(height: 15),
-
+              SizedBox(height: 15),
               CustomButtonTwo(),
-
-              const SizedBox(height: 30,),
-
-              //--------User data section-------//
+              SizedBox(height: 30),
 
               Text(
-                "Full Name",
+                AppString.fullName,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 5),
-
+              SizedBox(height: 5),
               Container(
                 height: 50,
                 child: TextField(
-                  keyboardType: TextInputType.emailAddress,
+                  keyboardType: TextInputType.name,
                   decoration: InputDecoration(
-                    hintText: "Enter your full name",
-                    contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    hintText: AppString.enterFullName,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -96,26 +88,68 @@ class _CreatYourAccountState extends State<CreatYourAccount> {
                 ),
               ),
 
-
-              const SizedBox(height: 15),
-
+              SizedBox(height: 15),
               Text(
-                "Email",
+                AppString.email,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 5),
+              SizedBox(height: 5),
+              Container(
+                height: 50,
+                child: TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    hintText: AppString.createEnterEmail,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                ),
+              ),
 
+              SizedBox(height: 15),
+              Text(
+                AppString.newPhone,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(height: 5),
+              Container(
+                height: 50,
+                child: TextField(
+                  keyboardType: TextInputType.phone,
+                  decoration: InputDecoration(
+                    hintText: AppString.enterPhone,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 15),
+              Text(
+                AppString.createAccountPass,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(height: 5),
               Container(
                 height: 50,
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    hintText: "Enter your email address",
-                    contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    hintText: AppString.createAccountPassEnter,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -123,48 +157,22 @@ class _CreatYourAccountState extends State<CreatYourAccount> {
                 ),
               ),
 
-              const SizedBox(height: 15),
+              SizedBox(height: 15),
               Text(
-                "Phone",
+                AppString.createAccountConfirmPass,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 5),
-
+              SizedBox(height: 5),
               Container(
                 height: 50,
                 child: TextField(
-                  keyboardType: TextInputType.emailAddress,
+                  obscureText: true,
                   decoration: InputDecoration(
-                    hintText: "Enter your phone number",
-                    contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 15),
-              Text(
-                "Password",
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const SizedBox(height: 5),
-
-              Container(
-                height: 50,
-                child: TextField(
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    hintText: "Enter Password",
-                    contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    hintText: AppString.createAccountPassEnter,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -172,38 +180,13 @@ class _CreatYourAccountState extends State<CreatYourAccount> {
                 ),
               ),
 
-              const SizedBox(height: 15),
-              Text(
-                "Confirm Password",
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const SizedBox(height: 5),
-
-              Container(
-                height: 50,
-                child: TextField(
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    hintText: "Enter Password",
-                    contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                ),
-              ),
-
-              SizedBox(height: 15,),
+              SizedBox(height: 15),
 
               Align(
                 alignment: Alignment.center,
                 child: RichText(
                   text: TextSpan(
-                    text: "I agree to the",
+                    text: AppString.iAgree,
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
@@ -211,21 +194,22 @@ class _CreatYourAccountState extends State<CreatYourAccount> {
                     ),
                     children: [
                       TextSpan(
-                        text: " Terms and Conditions ",
+                        text: " ${AppString.termsCondition} ",
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
-                      ), TextSpan(
-                        text: "and  ",
+                      ),
+                      TextSpan(
+                        text: " ${AppString.and} ",
                         style: TextStyle(
                           fontSize: 15,
                           color: Colors.grey,
                         ),
                       ),
                       TextSpan(
-                        text: "Privacy Policy.",
+                        text: AppString.privacyPolicy,
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
@@ -237,27 +221,30 @@ class _CreatYourAccountState extends State<CreatYourAccount> {
                 ),
               ),
 
-              const SizedBox(height: 30),
+              SizedBox(height: 30),
 
-              CustomButton(text: "Continue",
-              onTap: (){
-                Get.toNamed(AppRoute.verifyOtp);
-              },),
+              CustomButton(
+                text: AppString.continueText,
+                onTap: (){
+                  Get.toNamed(AppRoute.verifyOtp);
+                },
+              ),
 
-              const SizedBox(height: 30),
+              SizedBox(height: 30),
 
               CustomButton(
                 icon: FontAwesomeIcons.google,
-                text: "Continue with Google",
-                color: Colors.white,),
+                text: AppString.continueWithGoogle,
+                color: Colors.white,
+              ),
 
-              SizedBox(height: 30,),
+              SizedBox(height: 30),
 
               Align(
                 alignment: Alignment.center,
                 child: RichText(
                   text: TextSpan(
-                    text: "Already have an account? ",
+                    text: AppString.alreadyHaveAccount,
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
@@ -265,7 +252,7 @@ class _CreatYourAccountState extends State<CreatYourAccount> {
                     ),
                     children: [
                       TextSpan(
-                        text: "Sign in",
+                        text: AppString.singInText,
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,

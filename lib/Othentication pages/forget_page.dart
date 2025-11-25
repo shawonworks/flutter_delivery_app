@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../Onboarding Screen/custom_button.dart';
 import '../Custom/route_page.dart';
+import '../Utils/StaticString/staic_string.dart';
 
 class ForgetPage extends StatefulWidget {
   const ForgetPage({super.key});
@@ -32,7 +33,7 @@ class _ForgetPageState extends State<ForgetPage> {
               child: Column(
                 children: [
                   Text(
-                    "Forgot Password",
+                    AppString.forgetPass,
                     style: TextStyle(
                       color: Colors.green,
                       fontSize: 26,
@@ -41,7 +42,7 @@ class _ForgetPageState extends State<ForgetPage> {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    "Enter the phone number associated with your account and we’ll send you OTP to reset your password",
+                    AppString.forgotPassTextTitle,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 13,
@@ -56,7 +57,7 @@ class _ForgetPageState extends State<ForgetPage> {
 
             // Phone Label
             Text(
-              "Phone",
+              AppString.phone,
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
@@ -70,7 +71,7 @@ class _ForgetPageState extends State<ForgetPage> {
               child: TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
-                  hintText: "Ex : +8801000000000",
+                  hintText: AppString.phoneNumber,
                   contentPadding: const EdgeInsets.symmetric(
                       horizontal: 16, vertical: 12),
                   border: OutlineInputBorder(
@@ -84,7 +85,7 @@ class _ForgetPageState extends State<ForgetPage> {
 
             // Confirm Button
             CustomButton(
-              text: "Confirm",
+              text: AppString.confirm,
               onTap: () {
                 FocusScope.of(context).unfocus();
                 Get.toNamed(AppRoute.verifyOtpTwo);
