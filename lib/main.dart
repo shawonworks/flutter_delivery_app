@@ -4,16 +4,39 @@ import 'package:get/get.dart';
 
 import 'Custom/dependency_injection.dart';
 import 'Custom/route_page.dart';
+import 'helper/shared_prefe/shared_prefe.dart';
 
 void main() {
   DependancyInjection di = DependancyInjection();
   di.dependencies();
   runApp(const MyApp());
 }
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Locale _locale = const Locale("en", "US");
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLanguage();
+  }
+
+  _loadLanguage() async {
+    String lang = await SharePrefsHelper.getString(SharedPreferenceValue.language);
+    setState(() {
+      if (lang == "bn") {
+        _locale = const Locale("bn", "BAN");
+      } else {
+        _locale = const Locale("en", "US");
+      }
+    });
+  }
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -23,7 +46,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       debugShowCheckedModeBanner: false,
-      locale: const Locale("en", "US"),
+      locale: _locale,
       translations: Language(),
       defaultTransition: Transition.fadeIn,
       transitionDuration: Duration(milliseconds: 200),
@@ -33,19 +56,15 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
   final String title;
-
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
+  State<MyHomePage> createState() => _MyHomePageState();}
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold();
   }
 }

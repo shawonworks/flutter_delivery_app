@@ -51,7 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: ClipOval(
                         child: profileImage != null
                             ? Image.file(profileImage!, fit: BoxFit.cover)
-                            : Image.asset("assets/images/img_4.png", fit: BoxFit.cover),
+                            : Image.asset(
+                                "assets/images/img_4.png",
+                                fit: BoxFit.cover,
+                              ),
                       ),
                     ),
                   ),
@@ -75,6 +78,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   const Spacer(),
                   const Icon(color: Colors.black, FontAwesomeIcons.bell),
+                  SizedBox(width: 12),
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed(AppRoute.chooseLanguage);
+                    },
+                    child: Icon(color: Colors.black, Icons.language),
+                  ),
                 ],
               ),
               const SizedBox(height: 18),
@@ -207,14 +217,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             AppString.rebertDowny,
                             style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
-                          Text(
-                            AppString.city,
-                            style: TextStyle(fontSize: 12),
-                          ),
-                          Text(
-                            AppString.time,
-                            style: TextStyle(fontSize: 12),
-                          ),
+                          Text(AppString.city, style: TextStyle(fontSize: 12)),
+                          Text(AppString.time, style: TextStyle(fontSize: 12)),
                         ],
                       ),
                     ],
@@ -243,14 +247,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             AppString.rebertDowny,
                             style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
-                          Text(
-                            AppString.city,
-                            style: TextStyle(fontSize: 12),
-                          ),
-                          Text(
-                            AppString.time,
-                            style: TextStyle(fontSize: 12),
-                          ),
+                          Text(AppString.city, style: TextStyle(fontSize: 12)),
+                          Text(AppString.time, style: TextStyle(fontSize: 12)),
                         ],
                       ),
                     ],

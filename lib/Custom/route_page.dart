@@ -13,6 +13,7 @@ import 'package:delivery_app_two/Othentication%20pages/verify_otp_two.dart';
 
 import 'package:get/get.dart';
 
+import '../Language/chooseLanguage.dart';
 import '../Othentication pages/forget_page.dart';
 import '../Othentication pages/reset_password.dart';
 import '../Othentication pages/Sing_in/singin_page.dart';
@@ -42,6 +43,7 @@ class AppRoute {
   static const String detailsPageThree = "/detailsPageThree";
   static const String detailsPageFour = "/detailsPageFour";
   static const String detailsPageFive = "/detailsPageFive";
+  static const String chooseLanguage = "/chooseLanguage";
 
 
 
@@ -71,6 +73,7 @@ class AppRoute {
     GetPage(name: detailsPageThree, page:() => DetailsPageThree()),
     GetPage(name: detailsPageFour, page:() => DetailsPageFour()),
     GetPage(name: detailsPageFive, page:() => DetailsPageFive()),
+    GetPage(name: chooseLanguage, page:() => ChooseLanguage()),
 
 
 
