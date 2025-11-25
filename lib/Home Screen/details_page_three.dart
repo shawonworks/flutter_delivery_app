@@ -3,6 +3,8 @@ import 'package:delivery_app_two/Custom/route_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../Utils/StaticString/staic_string.dart';
+
 class DetailsPageThree extends StatefulWidget {
   const DetailsPageThree({super.key});
 
@@ -19,7 +21,8 @@ class _DetailsPageThreeState extends State<DetailsPageThree> {
         backgroundColor: Colors.white,
         shadowColor: Colors.grey,
         centerTitle: true,
-        title: Text("Summery",
+        title: Text(
+          AppString.summery,
           style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,
@@ -37,7 +40,7 @@ class _DetailsPageThreeState extends State<DetailsPageThree> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: Image.asset("assets/images/img_7.png",fit: BoxFit.cover,),
+              child: Image.asset("assets/images/img_7.png",fit: BoxFit.cover),
             ),
             SizedBox(height: 15),
             Container(
@@ -46,17 +49,18 @@ class _DetailsPageThreeState extends State<DetailsPageThree> {
               width: 337,
               height: 113,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(11),
-                border: Border.all(color: Colors.grey, width: 1)
+                  borderRadius: BorderRadius.circular(11),
+                  border: Border.all(color: Colors.grey, width: 1)
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Recipient Information",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black
-                  ),
+                  Text(
+                    AppString.recipientInfo,
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black
+                    ),
                   ),
                   Row(
                     children: [
@@ -66,7 +70,7 @@ class _DetailsPageThreeState extends State<DetailsPageThree> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        "Emma Hardy",
+                        AppString.profileImgName,
                         style: TextStyle(
                           fontSize: 12,
                         ),
@@ -81,7 +85,7 @@ class _DetailsPageThreeState extends State<DetailsPageThree> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        "(555) 123-4567",
+                        AppString.profileImgNumber,
                         style: TextStyle(
                           fontSize: 12,
                         ),
@@ -119,7 +123,8 @@ class _DetailsPageThreeState extends State<DetailsPageThree> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Parcel Details",
+                  Text(
+                    AppString.parcelDetails,
                     style: TextStyle(
                         fontSize: 14,
                         color: Colors.black
@@ -133,7 +138,7 @@ class _DetailsPageThreeState extends State<DetailsPageThree> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        "Parcel Type: Gift",
+                        AppString.parcelType,
                         style: TextStyle(
                           fontSize: 12,
                         ),
@@ -149,7 +154,7 @@ class _DetailsPageThreeState extends State<DetailsPageThree> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        "Parcel Value :  100",
+                        AppString.parcelAmount,
                         style: TextStyle(
                           fontSize: 12,
                         ),
@@ -165,7 +170,7 @@ class _DetailsPageThreeState extends State<DetailsPageThree> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        "Distance: 5 KM",
+                        AppString.parcelDistance,
                         style: TextStyle(
                           fontSize: 12,
                         ),
@@ -181,7 +186,7 @@ class _DetailsPageThreeState extends State<DetailsPageThree> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        "Delivery Charge: 10",
+                        AppString.parcelDeliveryCharge,
                         style: TextStyle(
                           fontSize: 12,
                         ),
@@ -192,10 +197,11 @@ class _DetailsPageThreeState extends State<DetailsPageThree> {
               ),
             ),
             SizedBox(height: 15),
-            CustomButton(text: "Send Request",
-            onTap: (){
-              Get.toNamed(AppRoute.detailsPageFour);
-             },
+            CustomButton(
+              text: AppString.sendRequest,
+              onTap: (){
+                Get.toNamed(AppRoute.detailsPageFour);
+              },
             ),
           ],
         ),

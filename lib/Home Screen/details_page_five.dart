@@ -1,9 +1,8 @@
 import 'package:delivery_app_two/Onboarding%20Screen/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
+import '../Utils/StaticString/staic_string.dart';
 import '/Custom/route_page.dart';
 
 class DetailsPageFive extends StatefulWidget {
@@ -22,7 +21,8 @@ class _DetailsPageFiveState extends State<DetailsPageFive> {
         backgroundColor: Colors.white,
         shadowColor: Colors.grey,
         centerTitle: true,
-        title: Text("Rider",
+        title: Text(
+          AppString.rider,
           style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,
@@ -30,7 +30,7 @@ class _DetailsPageFiveState extends State<DetailsPageFive> {
           ),
         ),
       ),
-      body:  Padding(
+      body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
           children: [
@@ -40,14 +40,16 @@ class _DetailsPageFiveState extends State<DetailsPageFive> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: Image.asset("assets/images/img_7.png",fit: BoxFit.cover,),
+              child: Image.asset("assets/images/img_7.png", fit: BoxFit.cover),
             ),
             SizedBox(height: 20),
-            Text("Rider is arriving in 10 min",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),),
+            Text(
+              AppString.riderDistance,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             SizedBox(height: 20),
             Row(
               children: [
@@ -63,12 +65,11 @@ class _DetailsPageFiveState extends State<DetailsPageFive> {
                   ),
                 ),
                 const SizedBox(width: 20),
-                //============Delivery Man Section ==================//
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
-                      "Md. Shaggy",
+                      AppString.riderName,
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
@@ -83,7 +84,7 @@ class _DetailsPageFiveState extends State<DetailsPageFive> {
                           size: 16,
                         ),
                         SizedBox(width: 4),
-                        Text("4.9 ( 35 Trips)"),
+                        Text(AppString.riderRatting),
                       ],
                     ),
                     Row(
@@ -94,7 +95,7 @@ class _DetailsPageFiveState extends State<DetailsPageFive> {
                           size: 16,
                         ),
                         SizedBox(width: 4),
-                        Text(" Bike: Yamaha YZF-R1"),
+                        Text(AppString.riderBike),
                       ],
                     ),
                   ],
@@ -106,18 +107,17 @@ class _DetailsPageFiveState extends State<DetailsPageFive> {
               onTap: (){
                 Get.toNamed(AppRoute.detailsPageThree);
               },
-              text: "Call Rider",
+              text: AppString.callRider,
               icon: Icons.call,
             ),
             const SizedBox(height: 30),
             CustomButton(
-              text: "Cancel Request",
+              text: AppString.cancelRequest,
               color: Colors.white,
               onTap: (){
                 Get.toNamed(AppRoute.detailsPageFour);
               },
             ),
-
           ],
         ),
       ),

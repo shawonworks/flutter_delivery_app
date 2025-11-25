@@ -1,9 +1,9 @@
 import 'package:delivery_app_two/Custom/route_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../Custom/custom_button.dart';
+import '../Utils/StaticString/staic_string.dart';
 
 class DetailsPageFour extends StatefulWidget {
   const DetailsPageFour({super.key});
@@ -22,7 +22,7 @@ class _DetailsPageFourState extends State<DetailsPageFour> {
         shadowColor: Colors.grey,
         centerTitle: true,
         title: Text(
-          "Searching Rider",
+          AppString.searchingRide,
           style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
@@ -47,7 +47,7 @@ class _DetailsPageFourState extends State<DetailsPageFour> {
               width: 327,
               height: 20,
               child: Text(
-                "Searching Rider",
+                AppString.searchingRide,
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -68,7 +68,7 @@ class _DetailsPageFourState extends State<DetailsPageFour> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Recipient Information",
+                    AppString.recipientInfo,
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.black,
@@ -82,7 +82,7 @@ class _DetailsPageFourState extends State<DetailsPageFour> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        "Emma Hardy",
+                        AppString.profileImgName,
                         style: TextStyle(
                           fontSize: 12,
                         ),
@@ -97,7 +97,7 @@ class _DetailsPageFourState extends State<DetailsPageFour> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        "(555) 123-4567",
+                        AppString.profileImgNumber,
                         style: TextStyle(
                           fontSize: 12,
                         ),
@@ -136,7 +136,7 @@ class _DetailsPageFourState extends State<DetailsPageFour> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Parcel Details",
+                    AppString.parcelDetails,
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.black,
@@ -150,7 +150,7 @@ class _DetailsPageFourState extends State<DetailsPageFour> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        "Parcel Type: Gift",
+                        AppString.parcelType,
                         style: TextStyle(
                           fontSize: 12,
                         ),
@@ -166,7 +166,7 @@ class _DetailsPageFourState extends State<DetailsPageFour> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        "Parcel Value :  100",
+                        AppString.parcelAmount,
                         style: TextStyle(
                           fontSize: 12,
                         ),
@@ -182,7 +182,7 @@ class _DetailsPageFourState extends State<DetailsPageFour> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        "Distance: 5 KM",
+                        AppString.parcelDistance,
                         style: TextStyle(
                           fontSize: 12,
                         ),
@@ -198,7 +198,7 @@ class _DetailsPageFourState extends State<DetailsPageFour> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        "Delivery Charge: 10",
+                        AppString.parcelDeliveryCharge,
                         style: TextStyle(
                           fontSize: 12,
                         ),
@@ -210,12 +210,11 @@ class _DetailsPageFourState extends State<DetailsPageFour> {
             ),
             SizedBox(height: 15),
             CustomButton(
-              text: "Send Request",
+              text: AppString.sendRequest,
               color: Colors.white,
               textColor: Colors.redAccent,
               borderColor: Colors.redAccent,
               onTap: () {
-                //===============BottomSheet List=================//
                 showModalBottomSheet(
                   context: context,
                   builder: (BuildContext context) {
@@ -239,30 +238,30 @@ class _DetailsPageFourState extends State<DetailsPageFour> {
                           ),
                           SizedBox(height: 20),
                           Text(
-                            "Are you Sure you Want to Cancel?",
+                            AppString.areYouSure,
                             style: TextStyle(
                               fontSize: 20,
                             ),
                           ),
                           SizedBox(height: 20),
                           Text(
-                            "Cancelling will remove all your order details. If \n you proceed, you’ll need to start a new order.",
+                            AppString.areYouSureText,
                             style: TextStyle(
                               fontSize: 14,
                             ),
                           ),
                           SizedBox(height: 20),
                           CustomButton(
-                            text: "Yes",
+                            text: AppString.yes,
                             color: Colors.redAccent,
                             borderColor: Colors.redAccent,
                             onTap: (){
-                            Get.toNamed(AppRoute.homeScreen);
+                              Get.toNamed(AppRoute.homeScreen);
                             },
                           ),
                           SizedBox(height: 20),
                           CustomButton(
-                            text: "No",
+                            text: AppString.no,
                             color: Colors.white,
                             borderColor: Colors.grey,
                             textColor: Colors.green,

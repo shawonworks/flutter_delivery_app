@@ -1,9 +1,8 @@
 import 'package:delivery_app_two/Custom/custom_button.dart';
 import 'package:delivery_app_two/Custom/route_page.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import '../Utils/StaticString/staic_string.dart';
 
 class DetailsPageTwo extends StatefulWidget {
   const DetailsPageTwo({super.key});
@@ -21,13 +20,12 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      //==================== AppBar Section=====================//
       appBar: AppBar(
         backgroundColor: Colors.white,
         shadowColor: Colors.grey,
         centerTitle: true,
         title: Text(
-          "Parcel Details",
+          AppString.parcelDetails,
           style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
@@ -42,7 +40,7 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Receivers Name",
+                AppString.receiversName,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
@@ -52,7 +50,7 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  hintText: "Enter Receivers name",
+                  hintText: AppString.enterReceiversName,
                   contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -61,7 +59,7 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
               ),
               const SizedBox(height: 20),
               Text(
-                "Contact Number",
+                AppString.contactNumber,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
@@ -71,7 +69,7 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  hintText: "Enter contact Number",
+                  hintText: AppString.enterContactNumber,
                   contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -80,7 +78,7 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
               ),
               const SizedBox(height: 20),
               Text(
-                "Additional Instruction",
+                AppString.additionInstruction,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
@@ -89,14 +87,13 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
               const SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
-                  hintText: "Giver Additional Instruction ",
+                  hintText: AppString.enterAdditionInstruction,
                   contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
               ),
-              // ================= Parcel Type Section ================= //
               SizedBox(height: 20),
               Text(
                 "Parcel Type",
@@ -107,7 +104,6 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
               ),
               const SizedBox(height: 20),
 
-              // ======= Parcel Type Dropdown Container ======= //
               StatefulBuilder(
                 builder: (context, setState) {
                   return Column(
@@ -151,7 +147,6 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
                         const SizedBox(height: 10),
                         Column(
                           children: [
-                            // ===== Homemade food =====
                             GestureDetector(
                               onTap: () {
                                 setState(() {
@@ -194,8 +189,6 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
                               ),
                             ),
                             const SizedBox(height: 10),
-
-                            // ===== Clothes =====
                             GestureDetector(
                               onTap: () {
                                 setState(() {
@@ -238,8 +231,6 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
                               ),
                             ),
                             const SizedBox(height: 10),
-
-                            // ===== Documents =====
                             GestureDetector(
                               onTap: () {
                                 setState(() {
@@ -282,8 +273,6 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
                               ),
                             ),
                             const SizedBox(height: 10),
-
-                            // ===== Gifts =====
                             GestureDetector(
                               onTap: () {
                                 setState(() {
@@ -326,8 +315,6 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
                               ),
                             ),
                             const SizedBox(height: 10),
-
-                            // ======Cosmetics ========
                             GestureDetector(
                               onTap: () {
                                 setState(() {
@@ -370,8 +357,6 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
                               ),
                             ),
                             const SizedBox(height: 10),
-
-                            // ====== Medicine ========
                             GestureDetector(
                               onTap: () {
                                 setState(() {
@@ -414,8 +399,6 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
                               ),
                             ),
                             const SizedBox(height: 10),
-
-                            // ====== Accessorise ========
                             GestureDetector(
                               onTap: () {
                                 setState(() {
@@ -458,8 +441,6 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
                               ),
                             ),
                             const SizedBox(height: 10),
-
-                            // ====== Electronics ========
                             GestureDetector(
                               onTap: () {
                                 setState(() {
@@ -510,10 +491,8 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
               ),
 
               SizedBox(height: 20),
-
-              //========= parcel value Section ========//
               Text(
-                "Parcel Value",
+                AppString.parcelValue,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
@@ -523,7 +502,7 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  hintText: "Give product value amount",
+                  hintText: AppString.enterParcelValueAmount,
                   contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -532,14 +511,13 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
               ),
               SizedBox(height: 20),
               Text(
-                "Parcel Weight",
+                AppString.parcelWeight,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               const SizedBox(height: 20),
-              //=================Parcel Weight plus Range Slider==========//
               Column(
                 children: [
                   Container(
@@ -574,9 +552,8 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
                 ],
               ),
               SizedBox(height: 20),
-              //=================Selected Ride plus Cycle anc car logo Section==============//
               Text(
-                "Select Ride",
+                AppString.selectRiderImg,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
@@ -593,7 +570,7 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
                         border: Border.all(color: Colors.green, width: 1),
                         color: Colors.white
                     ),
-                    child: Image.asset("assets/images/img_8.png", fit: BoxFit.cover,),
+                    child: Image.asset("assets/images/img_8.png", fit: BoxFit.cover),
                   ),
                   SizedBox(width: 25),
                   Container(
@@ -604,13 +581,13 @@ class _DetailsPageTwoState extends State<DetailsPageTwo> {
                         border: Border.all(color: Colors.grey, width: 1),
                         color: Colors.white
                     ),
-                    child: Image.asset("assets/images/car_img.png", fit: BoxFit.cover,),
+                    child: Image.asset("assets/images/car_img.png", fit: BoxFit.cover),
                   )
                 ],
               ),
               const SizedBox(height: 20),
               CustomButton(
-                text: "Continue",
+                text: AppString.continueText,
                 onTap: () {
                   Get.toNamed(AppRoute.detailsPageThree);
                 },
