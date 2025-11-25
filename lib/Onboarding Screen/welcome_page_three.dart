@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_button.dart';
+import '../Utils/StaticString/staic_string.dart';
 
 class WelcomePageThree extends StatefulWidget {
   const WelcomePageThree({super.key});
@@ -14,57 +14,42 @@ class _WelcomePageThreeState extends State<WelcomePageThree> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
-      body:
-      Column(
+      body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 119),
             child: Container(
               width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.28,
-              child: Image.asset("assets/images/img_3.png",
-                fit: BoxFit.contain,),
+              child: Image.asset(
+                "assets/images/img_3.png",
+                fit: BoxFit.contain,
+              ),
             ),
           ),
           const SizedBox(height: 35),
-
           Container(
             width: 335,
             height: 106,
-            child: const Column(
+            child: Column(
               children: [
                 Text(
-                  "Ready to Deliver?",
-                  style: TextStyle(
+                  AppString.welcomeThree,
+                  style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w700,
                     color: Color(0xff139F25),
                   ),
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20),
                 Text(
-                  "Let’s get your parcels moving! With just a few taps, "
-                      "your package is on its way. Speedy, secure, and hassle-free deliveries—every time.",
+                  AppString.welcomeTextTitleThree,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.black
-                  ),
+                  style: const TextStyle(fontSize: 14, color: Colors.black),
                 ),
               ],
             ),
           ),
-
-          // const SizedBox(height: 60),
-          //
-          // CustomButton(text: "Sing Up"),
-          //
-          //
-          // const SizedBox(height: 22),
-          //
-          // CustomButton(text: "Sing In", color: Colors.white,)
-
         ],
       ),
     );

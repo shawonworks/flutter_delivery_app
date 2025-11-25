@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
+import '../Utils/StaticString/staic_string.dart';
+
 class WelcomePageOne extends StatefulWidget {
   const WelcomePageOne({super.key});
 
@@ -33,7 +35,7 @@ class _WelcomePageOneState extends State<WelcomePageOne> {
             child: const Column(
               children: [
                 Text(
-                  "Welcome to Product Delivery,",
+                  AppString.welcomeOne,
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w700,
@@ -42,9 +44,7 @@ class _WelcomePageOneState extends State<WelcomePageOne> {
                 ),
                 SizedBox(height: 20,),
                 Text(
-                  "Your go-to solution for fast, reliable "
-                      "parcel delivery. Whether you're sending or receiving, we "
-                      "make it easy and quick.",
+                  AppString.welcomeTextTitleOne,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 14,

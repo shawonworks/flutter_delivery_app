@@ -86,7 +86,7 @@ class _SinginPageState extends State<SinginPage> {
                       controller: controller.singInEmailController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                        hintText: "Enter your email",
+                        hintText: "Enter your email address",
                         contentPadding:
                         const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                         border: OutlineInputBorder(

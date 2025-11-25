@@ -1,3 +1,4 @@
+import 'package:delivery_app_two/Othentication%20pages/CreatAccount/creat_your_account_controller.dart';
 import 'package:delivery_app_two/Othentication%20pages/Sing_in/singin_controller.dart';
 import 'package:get/get.dart';
 
@@ -9,6 +10,7 @@ class DependancyInjection extends Bindings{
 
     Get.lazyPut(() => ButtonController(), fenix: true);
     Get.lazyPut(() => SingInController(), fenix: true);
+   // Get.lazyPut(() => CreateYourAccountController(), fenix: true);
 
 
 
