@@ -118,7 +118,7 @@ class AppString {
   static const String recipientInfo = "Recipient Information";
   static const String profileImgName = "Emma Hardy";
   static const String profileImgNumber = "(555) 123-4567";
-  static const String profileImgLocation = "(555) 123-4567";
+  static const String profileImgLocation = "Gulshan, Dhaka";
   static const String parcelType = "Parcel Type: Gift";
   static const String parcelAmount = "Parcel Value :  100";
   static const String parcelDistance = "Distance: 5 KM";
