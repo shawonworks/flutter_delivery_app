@@ -102,6 +102,8 @@ class _DetailsPageFiveState extends State<DetailsPageFive> {
                 ),
               ],
             ),
+
+            ///Size Box////////
             const SizedBox(height: 30),
             CustomButton(
               onTap: (){
